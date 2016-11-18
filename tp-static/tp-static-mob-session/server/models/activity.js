@@ -1,7 +1,5 @@
 var Sequelize = require('sequelize');
-var db = new Sequelize('postgres://localhost:5432/tripplanner', {
-  logging: false
-});
+var db = require('../db');
 
 var Place = require('./place');
 
@@ -11,6 +9,6 @@ var Activity = db.define('activity', {
 	age_range: {type: Sequelize.STRING, allowNull: false}
 })
 
-Activity.belongsTo(Place);
+
 
 module.exports = Activity;
