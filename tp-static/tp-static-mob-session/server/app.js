@@ -22,7 +22,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(routes);
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, './public')));
+
+app.use('/bootstrap', express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
+
+app.use('/jquery', express.static(path.join(__dirname, '../node_modules/jquery/dist')));
+
 
 db.sync()
 .then(function () {
